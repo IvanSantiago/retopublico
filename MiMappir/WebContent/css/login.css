@@ -1,0 +1,25 @@
+@charset "utf-8";
+body {
+	background-repeat: repeat-y;
+	background-image: url(../images/bckgd.png);
+	background-position:center;
+	margin-bottom: 0px;
+}
+.gdtbckd {
+	background-image: url(../images/gdtbckgd.png);
+	background-position:center;
+	background-repeat: repeat-y;
+}
+
+.gdtlogin{
+	background-image: url(../images/bckd_login.png);
+	background-position:center;
+}
+.form{
+	margin-left:20px;
+	color:#7F7E81;
+	font-family:"Times New Roman", Times, serif;
+	font-weight:bold;
+	font-style: italic;
+	font-size:13px;
+}

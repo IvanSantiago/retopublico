@@ -1,0 +1,55 @@
+.icon-user {
+    background-image: url(../images/icons/user.png) !important;
+}
+
+.icon-user-add {
+    background-image: url(../images/icons/user_add.gif) !important;
+}
+
+.icon-save {
+    background-image: url(../images/icons/save.gif) !important;
+}
+
+.icon-clean-form {
+    background-image: url(../images/icons/newDoc.png) !important;
+}
+
+.icon-reset {
+    background-image: url(../images/icons/stop.png) !important;
+}
+
+.icon-grid {
+    background-image: url(../images/icons/grid.png) !important;
+}
+
+.icon-add {
+    background-image: url(../images/icons/add.png) !important;
+}
+
+.icon-delete {
+    background-image: url(../images/icons/delete.png) !important;
+}
+.icon-cancel {
+    background-image: url(../images/icons/cancel.png) !important;
+}
+.icon-cancel2 {
+    background-image: url(../images/icons/Delete2.png) !important;
+}
+.icon-login {
+    background-image: url(../images/icons/login.png) !important;
+}
+.icon-close {
+    background-image: url(../images/icons/close.png) !important;
+}
+.icon-lock {
+    background-image: url(../images/icons/lock.png) !important;
+}
+.icon-locked {
+    background-image: url(../images/icons/locked.png) !important;
+}
+.icon-warning {
+    background-image: url(../images/icons/warning.png) !important;
+}
+.icon-ok {
+    background-image: url(../images/icons/Ok.png) !important;
+}
