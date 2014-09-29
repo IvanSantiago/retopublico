@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 
-<Context path="/qoscell" docBase="" crossContext="true" reloadable="true" >
+<Context path="/mimappir" docBase="" crossContext="true" reloadable="true" >
 
     <!-- Default set of monitored resources -->
     <WatchedResource>WEB-INF/web.xml</WatchedResource>
@@ -45,7 +45,7 @@
   <Resource name="jdbc/ADMSEGDS_DESA" auth="Container" type="javax.sql.DataSource"
    maxActive="100" maxIdle="30" maxWait="10000"
                username="root" password="" driverClassName="com.mysql.jdbc.Driver"
-               url="jdbc:mysql://localhost:3306/qoscell" 
+               url="jdbc:mysql://localhost:3306/mimappir" 
                removeAbandoned="true" 	
 			   removeAbandonedTimeout="60"
 			   logAbandoned="true"/>
@@ -53,23 +53,23 @@
   <Resource name="jdbc/ADMSEGDS" auth="Container" type="javax.sql.DataSource"
    maxActive="100" maxIdle="30" maxWait="10000"
                username="usuariolocal" password="goatse" driverClassName="com.mysql.jdbc.Driver"
-               url="jdbc:mysql://10.33.141.243:3306/qoscell" 
+               url="jdbc:mysql://10.33.141.243:3306/mimappir" 
                removeAbandoned="true" 	
 			   removeAbandonedTimeout="60"
 			   logAbandoned="true"/>
 			   
-  <Resource name="jdbc/DS_qoscell_DESA" auth="Container" type="javax.sql.DataSource"
+  <Resource name="jdbc/DS_mimappir_DESA" auth="Container" type="javax.sql.DataSource"
                maxActive="100" maxIdle="30" maxWait="10000"
                username="root" password="" driverClassName="com.mysql.jdbc.Driver"
-               url="jdbc:mysql://localhost:3306/qoscell"
+               url="jdbc:mysql://localhost:3306/mimappir"
                removeAbandoned="true" 	
 			   removeAbandonedTimeout="60"
 			   logAbandoned="true"/>
 			   
-  <Resource name="jdbc/DS_qoscell" auth="Container" type="javax.sql.DataSource"
+  <Resource name="jdbc/DS_mimappir" auth="Container" type="javax.sql.DataSource"
                maxActive="100" maxIdle="30" maxWait="10000"
                username="usuariolocal" password="goatse" driverClassName="com.mysql.jdbc.Driver"
-               url="jdbc:mysql://10.33.141.243:3306/qoscell" 
+               url="jdbc:mysql://10.33.141.243:3306/mimappir" 
                removeAbandoned="true" 	
 			   removeAbandonedTimeout="60"
 			   logAbandoned="true"/>

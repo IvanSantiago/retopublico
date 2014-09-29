@@ -39,7 +39,7 @@
      -->
     <bean id="sessionFactorySIGTICDB2" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
         <property name="dataSource"><ref local="dataSourceSIGTICDB2"/></property>
-        <property name="packagesToScan" value="mx.gob.sct.utic.qoscell.sigtic.db2" />
+        <property name="packagesToScan" value="mx.gob.sct.utic.mimappir.sigtic.db2" />
         <property name="hibernateProperties">
         <props>
 	        <prop key="hibernate.query.factory_class">org.hibernate.hql.classic.ClassicQueryTranslatorFactory</prop>

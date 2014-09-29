@@ -10,10 +10,10 @@
 	<!-- Scans the classpath of this application for @Components to deploy as 
 		beans -->
 	<context:component-scan base-package="
-	mx.gob.sct.utic.qoscell.admseg
-	, mx.gob.sct.utic.qoscell.db
-	, mx.gob.sct.utic.qoscell.util
-	, mx.gob.sct.utic.qoscell.view" />
+	mx.gob.sct.utic.mimappir.admseg
+	, mx.gob.sct.utic.mimappir.db
+	, mx.gob.sct.utic.mimappir.util
+	, mx.gob.sct.utic.mimappir.view" />
 	
 
 	<!-- Configures the @Controller programming model -->
@@ -49,7 +49,7 @@
 
 	<!-- Configures Hibernate - Database Config -->
 	<import resource="db-admseg-config.xml" />
-	<import resource="db-qoscell-config.xml" />
+	<import resource="db-mimappir-config.xml" />
 	<!-- <import resource="db-otrosistema-config.xml" /> -->
 
 	<!-- Configures Spring - Mail Config -->

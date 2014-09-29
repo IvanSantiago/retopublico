@@ -1,6 +1,6 @@
 Ext.onReady(function(){
 
-	Ext.BLANK_IMAGE_URL = '/qoscell/ext-3.2.1/resources/images/default/s.gif';
+	Ext.BLANK_IMAGE_URL = '/mimappir/ext-3.2.1/resources/images/default/s.gif';
 	
     var Contact = Ext.data.Record.create([
 	{name: 'uid_SI'},

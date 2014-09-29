@@ -12,7 +12,7 @@
     	<!--PRODUCCION   configuracion TOMCAT y GLASSFISH -->
 		<!-- <property name="jndiName" value="java:comp/env/ADMSEG" /> -->
 		<!--DESARROLLO  configuracion WEBLOGIC-->
-		<property name="jndiName" value="ADMSEGDS_qoscell"></property> 
+		<property name="jndiName" value="ADMSEGDS_mimappir"></property> 
 		<!--<property name="jndiName" value="ADMSEGDS_DESA" /> -->
 		
 		<property name="lookupOnStartup" value="true"></property>
@@ -24,7 +24,7 @@
     <!--      -->
     <bean id="sessionFactory_ADMSEG_POSGIS" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
         <property name="dataSource"><ref local="dataSource_ADMSEG_POSGIS"/></property>
-        <property name="packagesToScan" value="mx.gob.sct.utic.qoscell.admseg.postgreSQL" />
+        <property name="packagesToScan" value="mx.gob.sct.utic.mimappir.admseg.postgreSQL" />
         <property name="hibernateProperties">
         <props>
         	<prop key="hibernate.dialect">org.hibernatespatial.postgis.PostgisDialect</prop>
@@ -48,7 +48,7 @@
      <!-- Hibernate SessionFactory for DB2 
     <bean id="sessionFactory_ADMSEG_DB2" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
         <property name="dataSource"><ref local="dataSourceADMSEG2DB2"/></property>
-        <property name="packagesToScan" value="mx.gob.sct.utic.qoscell.admseg.db2" />
+        <property name="packagesToScan" value="mx.gob.sct.utic.mimappir.admseg.db2" />
         <property name="hibernateProperties">
         <props>
 	        <prop key="hibernate.query.factory_class">org.hibernate.hql.classic.ClassicQueryTranslatorFactory</prop>

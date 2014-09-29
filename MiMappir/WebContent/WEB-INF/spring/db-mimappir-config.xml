@@ -16,13 +16,13 @@
     </bean>
      -->
      
-    <bean id="dataSource_qoscell_POSGIS" class="org.springframework.jndi.JndiObjectFactoryBean">
+    <bean id="dataSource_mimappir_POSGIS" class="org.springframework.jndi.JndiObjectFactoryBean">
     	<!--PRODUCCION configuracion TOMCAT y GLASSFISH -->
-		<!-- <property name="jndiName" value="java:comp/env/DS_qoscell" /> -->
+		<!-- <property name="jndiName" value="java:comp/env/DS_mimappir" /> -->
 		<!--DESARROLLO configuracion WEBLOGIC-->
 		
-		<property name="jndiName" value="DS_qoscell"></property>
-		<!-- <property name="jndiName" value="DS_qoscell_DESA" /> -->
+		<property name="jndiName" value="DS_mimappir"></property>
+		<!-- <property name="jndiName" value="DS_mimappir_DESA" /> -->
 		<property name="lookupOnStartup" value="true"></property>
     	<property name="cache" value="true"></property>
     	<property name="proxyInterface" value="javax.sql.DataSource"></property>
@@ -30,9 +30,9 @@
     
     <!-- Hibernate SessionFactory for MYSQL-->
     <!--      -->
-    <bean id="sessionFactory_qoscell_POSGIS" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
-        <property name="dataSource"><ref local="dataSource_qoscell_POSGIS"/></property>
-        <property name="packagesToScan" value="mx.gob.sct.utic.qoscell.db.postgreSQL" />
+    <bean id="sessionFactory_mimappir_POSGIS" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+        <property name="dataSource"><ref local="dataSource_mimappir_POSGIS"/></property>
+        <property name="packagesToScan" value="mx.gob.sct.utic.mimappir.db.postgreSQL" />
         <property name="hibernateProperties">
         <props>
         	<prop key="hibernate.dialect">org.hibernatespatial.postgis.PostgisDialect</prop>
@@ -57,9 +57,9 @@
     </bean>
 
      <!-- Hibernate SessionFactory for DB2
-    <bean id="sessionFactory_qoscell_DB2" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
-        <property name="dataSource"><ref local="DS_qoscell_DESA"/></property>
-        <property name="packagesToScan" value="mx.gob.sct.utic.qoscell.db.db2" />
+    <bean id="sessionFactory_mimappir_DB2" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+        <property name="dataSource"><ref local="DS_mimappir_DESA"/></property>
+        <property name="packagesToScan" value="mx.gob.sct.utic.mimappir.db.db2" />
         <property name="hibernateProperties">
         <props>
 	        <prop key="hibernate.query.factory_class">org.hibernate.hql.classic.ClassicQueryTranslatorFactory</prop>
@@ -79,8 +79,8 @@
 	
 	<!-- Transaction manager for a single Hibernate SessionFactory (alternative to JTA) -->
 	<tx:annotation-driven/>
-    <bean id="transactionManager_qoscell_POSGIS" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
-        <property name="sessionFactory"><ref local="sessionFactory_qoscell_POSGIS"/></property>
+    <bean id="transactionManager_mimappir_POSGIS" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+        <property name="sessionFactory"><ref local="sessionFactory_mimappir_POSGIS"/></property>
     </bean>
     
 

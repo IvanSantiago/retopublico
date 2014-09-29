@@ -18,7 +18,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 	</property>
 </bean>
  
-<bean id="Mailer" class="mx.gob.sct.utic.qoscell.util.Mailer">
+<bean id="Mailer" class="mx.gob.sct.utic.mimappir.util.Mailer">
 	<property name="mailSender" ref="mailSender" />
 </bean>
  

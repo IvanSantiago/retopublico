@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-    <wb-module deploy-name="qoscell">
+    <wb-module deploy-name="mimappir">
         <wb-resource deploy-path="/" source-path="/WebContent"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <property name="java-output-path" value="/qoscell/build/classes"/>
+        <property name="java-output-path" value="/mimappir/build/classes"/>
         <property name="context-root" value="mimappir"/>
     </wb-module>
 </project-modules>
