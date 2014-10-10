@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/IVAN_REPO/!svn/ver/173/pipml/src/mx/gob/sct/utic/pipml/admseg/db2/model/pk
+END
+ICVESEGMENU_PK.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/IVAN_REPO/!svn/ver/173/pipml/src/mx/gob/sct/utic/pipml/admseg/db2/model/pk/ICVESEGMENU_PK.java
+END
+ICVESEGGRUPO_PK.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/IVAN_REPO/!svn/ver/173/pipml/src/mx/gob/sct/utic/pipml/admseg/db2/model/pk/ICVESEGGRUPO_PK.java
+END
+ICVESEGUSUARIO_PK.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/IVAN_REPO/!svn/ver/173/pipml/src/mx/gob/sct/utic/pipml/admseg/db2/model/pk/ICVESEGUSUARIO_PK.java
+END
+ICVESEGGPOXUSR_PK.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/IVAN_REPO/!svn/ver/173/pipml/src/mx/gob/sct/utic/pipml/admseg/db2/model/pk/ICVESEGGPOXUSR_PK.java
+END
+ICVESEGSISTEMA_PK.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/IVAN_REPO/!svn/ver/173/pipml/src/mx/gob/sct/utic/pipml/admseg/db2/model/pk/ICVESEGSISTEMA_PK.java
+END
+ICVESEGPERMISOXGPO_PK.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/IVAN_REPO/!svn/ver/173/pipml/src/mx/gob/sct/utic/pipml/admseg/db2/model/pk/ICVESEGPERMISOXGPO_PK.java
+END
+ICVEMENU_PK.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/IVAN_REPO/!svn/ver/173/pipml/src/mx/gob/sct/utic/pipml/admseg/db2/model/pk/ICVEMENU_PK.java
+END
+ICVESEGPROGRAMA_PK.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/IVAN_REPO/!svn/ver/173/pipml/src/mx/gob/sct/utic/pipml/admseg/db2/model/pk/ICVESEGPROGRAMA_PK.java
+END

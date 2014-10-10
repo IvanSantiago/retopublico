@@ -1,7 +1,7 @@
 // Este para el acceso publico
-var ___servidor = "http://ttr.sct.gob.mx/mappir/";
+//var ___servidor = "http://ttr.sct.gob.mx/mappir/";
 
-// var ___servidor = "http://localhost:7010/mappir/"; // Este para correr local
+var ___servidor = "http://localhost:7001/mappir/"; // Este para correr local
 
 var __servidorServiciosCoconut = "http://ttr.sct.gob.mx/"; // para servicios Publicos de SCT
 
