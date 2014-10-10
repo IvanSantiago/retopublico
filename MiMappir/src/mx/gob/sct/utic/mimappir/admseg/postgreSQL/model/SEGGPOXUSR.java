@@ -9,6 +9,7 @@ import javax.persistence.Transient;
 import org.codehaus.jackson.annotate.JsonAutoDetect;
 import org.codehaus.jackson.annotate.JsonProperty;
 import org.codehaus.jackson.annotate.JsonAutoDetect.Visibility;
+import mx.gob.sct.utic.mimappir.admseg.postgreSQL.model.pk.ICVESEGGPOXUSR_PK;
 
 @JsonAutoDetect(fieldVisibility = Visibility.ANY, getterVisibility = Visibility.NONE, setterVisibility = Visibility.NONE)
 @Entity
@@ -33,10 +34,19 @@ public class SEGGPOXUSR {
 	}
 
 	public String getICVESEGGPOXUSR_ID() {
+		ICVESEGGPOXUSR_ID = 
+		getICVESEGGPOXUSR_PK().getICVESISTEMA()+"-"+
+		getICVESEGGPOXUSR_PK().getICVEUSUARIO()+"-"+
+		getICVESEGGPOXUSR_PK().getICVEGRUPO()+"-";
 		return ICVESEGGPOXUSR_ID;
 	}
 
 	public void setICVESEGGPOXUSR_ID(String iCVESEGGPOXUSR_ID) {
+		ICVESEGGPOXUSR_PK newPK = new ICVESEGGPOXUSR_PK();
+		newPK.setICVESISTEMA(Short.parseShort(iCVESEGGPOXUSR_ID.split("-")[0]));
+		newPK.setICVEUSUARIO(Long.parseLong(iCVESEGGPOXUSR_ID.split("-")[1]));
+		newPK.setICVEGRUPO(Short.parseShort(iCVESEGGPOXUSR_ID.split("-")[2]));
+		setICVESEGGPOXUSR_PK(newPK);
 		ICVESEGGPOXUSR_ID = iCVESEGGPOXUSR_ID;
 	}
 }

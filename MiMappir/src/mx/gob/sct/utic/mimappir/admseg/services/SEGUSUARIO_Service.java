@@ -27,8 +27,8 @@ public class SEGUSUARIO_Service {
 	 * Get all contacts
 	 * @return
 	 */
-	@Transactional(value="transactionManager_ADMSEG_POSGIS",readOnly=true)
-	public List<SEGUSUARIO> getUsuariosList(){
+	@Transactional(value="transactionManager_ADMSEG_POSGIS")
+	public List<SEGUSUARIO> getList(){
 
 		return DAO.getList();
 	}
@@ -37,7 +37,7 @@ public class SEGUSUARIO_Service {
 	 * Get all contacts
 	 * @return
 	 */
-	@Transactional(value="transactionManager_ADMSEG_POSGIS",readOnly=true)
+	@Transactional(value="transactionManager_ADMSEG_POSGIS")
 	public List<SEGUSUARIO> getUsuario(String Login){
 		return DAO.getUser(Login);
 	}
@@ -46,7 +46,7 @@ public class SEGUSUARIO_Service {
 	 * Get all contacts
 	 * @return
 	 */
-	@Transactional(value="transactionManager_ADMSEG_POSGIS",readOnly=true)
+	@Transactional(value="transactionManager_ADMSEG_POSGIS")
 	public SEGUSUARIO getNewestUser(String Login){
 		SEGUSUARIO newestuser = DAO.getNewestUser(Login); 
 		if(newestuser == null){
@@ -61,7 +61,7 @@ public class SEGUSUARIO_Service {
 	 * @param data - json data from request
 	 * @return created contacts
 	 */
-	@Transactional(value="transactionManager_ADMSEG_POSGIS",readOnly=true)
+	@Transactional(value="transactionManager_ADMSEG_POSGIS")
 	public List<SEGUSUARIO> create(Object data){
 		
         List<SEGUSUARIO> newContacts = new ArrayList<SEGUSUARIO>();

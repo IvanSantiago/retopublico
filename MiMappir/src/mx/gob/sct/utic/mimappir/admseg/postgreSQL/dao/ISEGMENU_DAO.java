@@ -2,7 +2,7 @@ package mx.gob.sct.utic.mimappir.admseg.postgreSQL.dao;
 
 import java.util.List;
 
-import mx.gob.sct.utic.mimappir.admseg.postgreSQL.model.ICVESEGMENU_PK;
+import mx.gob.sct.utic.mimappir.admseg.postgreSQL.model.pk.ICVESEGMENU_PK;
 import mx.gob.sct.utic.mimappir.admseg.postgreSQL.model.SEGMENU;
 
 /**

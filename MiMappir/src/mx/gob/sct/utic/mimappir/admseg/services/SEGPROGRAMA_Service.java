@@ -28,7 +28,7 @@ public class SEGPROGRAMA_Service {
 	 * Get all SEGPROGRAMA
 	 * @return
 	 */
-	@Transactional(value="transactionManager_mimappir_DB2",readOnly=true)
+	@Transactional(value="transactionManager_ADMSEG_POSGIS")
 	public List<SEGPROGRAMA> getList(){
 		return DAO.getList();
 	}
@@ -38,7 +38,7 @@ public class SEGPROGRAMA_Service {
 	 * @param data - json data from request
 	 * @return created SEGPROGRAMA
 	 */
-	@Transactional(value="transactionManager_mimappir_DB2")
+	@Transactional(value="transactionManager_ADMSEG_POSGIS")
 	public List<SEGPROGRAMA> create(Object data){
 		
         List<SEGPROGRAMA> returnSEGPROGRAMA = new ArrayList<SEGPROGRAMA>();
@@ -66,7 +66,7 @@ public class SEGPROGRAMA_Service {
 	 * @param data - SEGPROGRAMA Object
 	 * @return created SEGPROGRAMA Object
 	 */
-	@Transactional(value="transactionManager_mimappir_DB2")
+	@Transactional(value="transactionManager_ADMSEG_POSGIS")
 	public SEGPROGRAMA create(SEGPROGRAMA SEGPROGRAMA){				
 		return DAO.save(SEGPROGRAMA);
 	}
@@ -77,7 +77,7 @@ public class SEGPROGRAMA_Service {
 	 * @param data - json data from request
 	 * @return updated SEGPROGRAMA
 	 */
-	@Transactional(value="transactionManager_mimappir_DB2")
+	@Transactional(value="transactionManager_ADMSEG_POSGIS")
 	public List<SEGPROGRAMA> update(Object data){
 		
 		List<SEGPROGRAMA> returnSEGPROGRAMA = new ArrayList<SEGPROGRAMA>();
@@ -95,7 +95,7 @@ public class SEGPROGRAMA_Service {
 	 * Delete SEGPROGRAMA by SEGPROGRAMA_ID
 	 * @param data - json data from request
 	 */
-	@Transactional(value="transactionManager_mimappir_DB2")
+	@Transactional(value="transactionManager_ADMSEG_POSGIS")
 	public void delete(Object data){
 		List<String> deleteSEGPROGRAMA = getIdFromRequest(data);
 /*		

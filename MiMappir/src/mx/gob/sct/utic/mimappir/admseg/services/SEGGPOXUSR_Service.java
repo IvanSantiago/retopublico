@@ -28,7 +28,7 @@ public class SEGGPOXUSR_Service {
 	 * Get all SEGGPOXUSR
 	 * @return
 	 */
-	@Transactional(value="transactionManager_mimappir_DB2",readOnly=true)
+	@Transactional(value="transactionManager_ADMSEG_POSGIS")
 	public List<SEGGPOXUSR> getList(){
 		return DAO.getList();
 	}
@@ -36,7 +36,7 @@ public class SEGGPOXUSR_Service {
 	 * Get specific SEGGPOXUSR
 	 * @return
 	 */
-	@Transactional(value="transactionManager_mimappir_DB2",readOnly=true)
+	@Transactional(value="transactionManager_ADMSEG_POSGIS")
 	public SEGGPOXUSR getSEGGPOXUSR(Long ICVEUSUARIO){
 		List<SEGGPOXUSR> processes = DAO.getSEGGPOXUSR(ICVEUSUARIO);
 		SEGGPOXUSR findedProcess = null;
@@ -52,7 +52,7 @@ public class SEGGPOXUSR_Service {
 	 * @param data - json data from request
 	 * @return created SEGGPOXUSR
 	 */
-	@Transactional(value="transactionManager_mimappir_DB2")
+	@Transactional(value="transactionManager_ADMSEG_POSGIS")
 	public List<SEGGPOXUSR> create(Object data){
 		
         List<SEGGPOXUSR> returnSEGGPOXUSR = new ArrayList<SEGGPOXUSR>();
@@ -80,7 +80,7 @@ public class SEGGPOXUSR_Service {
 	 * @param data - SEGGPOXUSR Object
 	 * @return created SEGGPOXUSR Object
 	 */
-	@Transactional(value="transactionManager_mimappir_DB2")
+	@Transactional(value="transactionManager_ADMSEG_POSGIS")
 	public SEGGPOXUSR create(SEGGPOXUSR SEGGPOXUSR){				
 		return DAO.save(SEGGPOXUSR);
 	}
@@ -91,7 +91,7 @@ public class SEGGPOXUSR_Service {
 	 * @param data - json data from request
 	 * @return updated SEGGPOXUSR
 	 */
-	@Transactional(value="transactionManager_mimappir_DB2")
+	@Transactional(value="transactionManager_ADMSEG_POSGIS")
 	public List<SEGGPOXUSR> update(Object data){
 		
 		List<SEGGPOXUSR> returnSEGGPOXUSR = new ArrayList<SEGGPOXUSR>();
@@ -109,7 +109,7 @@ public class SEGGPOXUSR_Service {
 	 * Delete SEGGPOXUSR by SEGGPOXUSR_ID
 	 * @param data - json data from request
 	 */
-	@Transactional(value="transactionManager_mimappir_DB2")
+	@Transactional(value="transactionManager_ADMSEG_POSGIS")
 	public void delete(Object data){
 		List<String> deleteSEGGPOXUSR = getIdFromRequest(data);
 /*		

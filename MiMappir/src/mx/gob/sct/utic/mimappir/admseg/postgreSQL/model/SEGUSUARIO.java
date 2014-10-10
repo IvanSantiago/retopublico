@@ -12,9 +12,10 @@ import javax.persistence.JoinTable;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
-
+import mx.gob.sct.utic.mimappir.admseg.postgreSQL.model.pk.ICVESEGUSUARIO_PK;
 import org.codehaus.jackson.annotate.JsonAutoDetect;
 import org.codehaus.jackson.annotate.JsonProperty;
+import org.codehaus.jackson.annotate.JsonAutoDetect.Visibility;
 
 
 /**
@@ -24,7 +25,7 @@ import org.codehaus.jackson.annotate.JsonProperty;
  *
  */
 
-@JsonAutoDetect
+@JsonAutoDetect(fieldVisibility = Visibility.ANY, getterVisibility = Visibility.NONE, setterVisibility = Visibility.NONE)
 @Entity
 @Table(name="SEGUSUARIO")
 public class SEGUSUARIO {
@@ -37,28 +38,83 @@ public class SEGUSUARIO {
 	@Transient
 	private String ICVESEGUSUARIO_ID;
 	
+	@Column(name="DTREGISTRO", nullable=false)
+	@JsonProperty("DTREGISTRO")
 	private Date DTREGISTRO;
+	
+	@Column(name="CUSUARIO", nullable=false)
+	@JsonProperty("CUSUARIO")
 	private String CUSUARIO;
+	
+	@Column(name="CPASSWORD", nullable=false)
+	@JsonProperty("CPASSWORD")
 	private String CPASSWORD;
+	
+	@Column(name="CNOMBRE", nullable=false)
+	@JsonProperty("CNOMBRE")
 	private String CNOMBRE;
+	
+	@Column(name="CAPPATERNO", nullable=false)
+	@JsonProperty("CAPPATERNO")
 	private String CAPPATERNO;
+	
+	@Column(name="CAPMATERNO", nullable=false)
+	@JsonProperty("CAPMATERNO")
 	private String CAPMATERNO;
+	
+	@Column(name="CCALLE", nullable=false)
+	@JsonProperty("CCALLE")
 	private String CCALLE;
+	
+	@Column(name="CCOLONIA", nullable=false)
+	@JsonProperty("CCOLONIA")
 	private String CCOLONIA;
+	
+	@Column(name="ICVEPAIS", nullable=false)
+	@JsonProperty("ICVEPAIS")
 	private Short ICVEPAIS;	
+	
+	@Column(name="ICVEENTIDADFED", nullable=false)
+	@JsonProperty("ICVEENTIDADFED")
 	private Short ICVEENTIDADFED;
+	
+	@Column(name="ICVEMUNICIPIO", nullable=false)
+	@JsonProperty("ICVEMUNICIPIO")
 	private Long ICVEMUNICIPIO;
+	
+	@Column(name="ICODIGOPOSTAL", nullable=false)
+	@JsonProperty("ICODIGOPOSTAL")
 	private Long ICODIGOPOSTAL;
+	
+	@Column(name="CTELEFONO", nullable=false)
+	@JsonProperty("CTELEFONO")
 	private String CTELEFONO;
+	
+	@Column(name="ICVEUNIDADORG", nullable=false)
+	@JsonProperty("ICVEUNIDADORG")
 	private Short ICVEUNIDADORG;
+	
+	@Column(name="LBLOQUEADO", nullable=false)
+	@JsonProperty("LBLOQUEADO")
 	private Short LBLOQUEADO;
+	
+	@Column(name="CECORREO", nullable=false)
+	@JsonProperty("CECORREO")
 	private String CECORREO;
+	
+	@Column(name="DTCAMBIOCONTRA", nullable=false)
+	@JsonProperty("DTCAMBIOCONTRA")
 	private Date DTCAMBIOCONTRA;
 
 	public String getICVESEGUSUARIO_ID() {
+		ICVESEGUSUARIO_ID = 
+			getICVESEGUSUARIO_PK().getICVEUSUARIO()+"-";
 		return ICVESEGUSUARIO_ID;
 	}
 	public void setICVESEGUSUARIO_ID(String iCVESEGUSUARIO_ID) {
+		ICVESEGUSUARIO_PK newPK = new ICVESEGUSUARIO_PK();
+		newPK.setICVEUSUARIO(Long.parseLong(iCVESEGUSUARIO_ID.split("-")[0]));
+		setICVESEGUSUARIO_PK(newPK);
 		ICVESEGUSUARIO_ID = iCVESEGUSUARIO_ID;
 	}
 	public ICVESEGUSUARIO_PK getICVESEGUSUARIO_PK() {

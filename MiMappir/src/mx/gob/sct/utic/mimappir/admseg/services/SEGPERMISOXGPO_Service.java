@@ -28,7 +28,7 @@ public class SEGPERMISOXGPO_Service {
 	 * Get all SEGPERMISOXGPO
 	 * @return
 	 */
-	@Transactional(value="transactionManager_mimappir_DB2",readOnly=true)
+	@Transactional(value="transactionManager_ADMSEG_POSGIS")
 	public List<SEGPERMISOXGPO> getList(){
 		return DAO.getList();
 	}
@@ -36,7 +36,7 @@ public class SEGPERMISOXGPO_Service {
 	 * Get specific SEGPERMISOXGPO
 	 * @return
 	 */
-	@Transactional(value="transactionManager_mimappir_DB2",readOnly=true)
+	@Transactional(value="transactionManager_ADMSEG_POSGIS")
 	public SEGPERMISOXGPO getSEGPERMISOXGPO(int ICVEOBRA){
 		List<SEGPERMISOXGPO> processes = DAO.getSEGPERMISOXGPO(ICVEOBRA);
 		SEGPERMISOXGPO findedProcess = null;
@@ -52,7 +52,7 @@ public class SEGPERMISOXGPO_Service {
 	 * @param data - json data from request
 	 * @return created SEGPERMISOXGPO
 	 */
-	@Transactional(value="transactionManager_mimappir_DB2")
+	@Transactional(value="transactionManager_ADMSEG_POSGIS")
 	public List<SEGPERMISOXGPO> create(Object data){
 		
         List<SEGPERMISOXGPO> returnSEGPERMISOXGPO = new ArrayList<SEGPERMISOXGPO>();
@@ -80,7 +80,7 @@ public class SEGPERMISOXGPO_Service {
 	 * @param data - SEGPERMISOXGPO Object
 	 * @return created SEGPERMISOXGPO Object
 	 */
-	@Transactional(value="transactionManager_mimappir_DB2")
+	@Transactional(value="transactionManager_ADMSEG_POSGIS")
 	public SEGPERMISOXGPO create(SEGPERMISOXGPO SEGPERMISOXGPO){				
 		return DAO.save(SEGPERMISOXGPO);
 	}
@@ -91,7 +91,7 @@ public class SEGPERMISOXGPO_Service {
 	 * @param data - json data from request
 	 * @return updated SEGPERMISOXGPO
 	 */
-	@Transactional(value="transactionManager_mimappir_DB2")
+	@Transactional(value="transactionManager_ADMSEG_POSGIS")
 	public List<SEGPERMISOXGPO> update(Object data){
 		
 		List<SEGPERMISOXGPO> returnSEGPERMISOXGPO = new ArrayList<SEGPERMISOXGPO>();
@@ -109,7 +109,7 @@ public class SEGPERMISOXGPO_Service {
 	 * Delete SEGPERMISOXGPO by SEGPERMISOXGPO_ID
 	 * @param data - json data from request
 	 */
-	@Transactional(value="transactionManager_mimappir_DB2")
+	@Transactional(value="transactionManager_ADMSEG_POSGIS")
 	public void delete(Object data){
 		List<String> deleteSEGPERMISOXGPO = getIdFromRequest(data);
 /*		

@@ -4,7 +4,7 @@ import java.util.Iterator;
 import java.util.List;
 
 
-import mx.gob.sct.utic.mimappir.admseg.postgreSQL.model.ICVESEGMENU_PK;
+import mx.gob.sct.utic.mimappir.admseg.postgreSQL.model.pk.ICVESEGMENU_PK;
 import mx.gob.sct.utic.mimappir.admseg.postgreSQL.model.SEGGPOXUSR;
 import mx.gob.sct.utic.mimappir.admseg.postgreSQL.model.SEGMENU;
 import mx.gob.sct.utic.mimappir.admseg.postgreSQL.model.SEGPERMISOXGPO;

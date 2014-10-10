@@ -11,7 +11,6 @@ import mx.gob.sct.utic.mimappir.admseg.postgreSQL.dao.SEGSISTEMA_DAO;
 import mx.gob.sct.utic.mimappir.admseg.postgreSQL.dao.SEGGPOXUSR_DAO;
 import mx.gob.sct.utic.mimappir.admseg.postgreSQL.dao.SEGPERMISOXGPO_DAO;
 
-import mx.gob.sct.utic.mimappir.admseg.postgreSQL.model.ICVESEGMENU_PK;
 import mx.gob.sct.utic.mimappir.admseg.postgreSQL.model.SEGGPOXUSR;
 import mx.gob.sct.utic.mimappir.admseg.postgreSQL.model.SEGGRUPO;
 import mx.gob.sct.utic.mimappir.admseg.postgreSQL.model.SEGMENU;
@@ -19,6 +18,7 @@ import mx.gob.sct.utic.mimappir.admseg.postgreSQL.model.SEGPERMISOXGPO;
 import mx.gob.sct.utic.mimappir.admseg.postgreSQL.model.SEGPROGRAMA;
 import mx.gob.sct.utic.mimappir.admseg.postgreSQL.model.SEGSISTEMA;
 import mx.gob.sct.utic.mimappir.admseg.postgreSQL.model.SEGUSUARIO;
+import mx.gob.sct.utic.mimappir.admseg.postgreSQL.model.pk.ICVESEGMENU_PK;
 import java.util.Iterator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -43,7 +43,7 @@ public class SEGMENU_Service {
 	 * Get all SEGMENU
 	 * @return
 	 */
-	@Transactional(value="transactionManager_ADMSEG_POSGIS",readOnly=true)
+	@Transactional(value="transactionManager_ADMSEG_POSGIS")
 	public List<SEGMENU> getMenuList(){
 		return SEGMENU_DAO.getList();
 	}
@@ -52,9 +52,9 @@ public class SEGMENU_Service {
 	 * Get all Menu options for a user
 	 * @return
 	 */
-	@Transactional(value="transactionManager_ADMSEG_POSGIS",readOnly=true)
+	@Transactional(value="transactionManager_ADMSEG_POSGIS")
 	public List<SEGMENU> getMenuForUser(String LOGIN){
-		SEGSISTEMA segsistema = SEGSISTEMA_DAO.getSistema(new Short("1"));
+		SEGSISTEMA segsistema = SEGSISTEMA_DAO.getSistema(new Short("48"));
 		SEGUSUARIO segusuario = SEGUSUARIO_DAO.searchDatabase(LOGIN);
 		List<SEGMENU> menuDelUsuario = new ArrayList<SEGMENU>();
 		if(segusuario!= null){
@@ -80,7 +80,7 @@ public class SEGMENU_Service {
 	 * @param data - json data from request
 	 * @return created SEGMENU
 	 */
-	@Transactional(value="transactionManager_ADMSEG_POSGIS",readOnly=true)
+	@Transactional(value="transactionManager_ADMSEG_POSGIS")
 	public List<SEGMENU> create(Object data){
 		
         List<SEGMENU> newSEGMENU = new ArrayList<SEGMENU>();
@@ -100,7 +100,7 @@ public class SEGMENU_Service {
 	 * @param data - json data from request
 	 * @return updated SEGMENU
 	 */
-	@Transactional(value="transactionManager_ADMSEG_POSGIS",readOnly=true)
+	@Transactional(value="transactionManager_ADMSEG_POSGIS")
 	public List<SEGMENU> update(Object data){
 		
 		List<SEGMENU> returnSEGMENU = new ArrayList<SEGMENU>();
@@ -118,7 +118,7 @@ public class SEGMENU_Service {
 	 * Delete contact/SEGMENU
 	 * @param data - json data from request
 	 */
-	@Transactional(value="transactionManager_ADMSEG_POSGIS",readOnly=true)
+	@Transactional(value="transactionManager_ADMSEG_POSGIS")
 	public void delete(Object data){
 		
 		//it is an array - have to cast to array object

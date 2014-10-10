@@ -28,7 +28,7 @@ public class SEGGRUPO_Service {
 	 * Get all SEGGRUPO
 	 * @return
 	 */
-	@Transactional(value="transactionManager_mimappir_DB2",readOnly=true)
+	@Transactional(value="transactionManager_ADMSEG_POSGIS")
 	public List<SEGGRUPO> getList(){
 		return DAO.getList();
 	}
@@ -36,7 +36,7 @@ public class SEGGRUPO_Service {
 	 * Get specific SEGGRUPO
 	 * @return
 	 */
-	@Transactional(value="transactionManager_mimappir_DB2",readOnly=true)
+	@Transactional(value="transactionManager_ADMSEG_POSGIS")
 	public SEGGRUPO getSEGGRUPO(int ICVEOBRA){
 		List<SEGGRUPO> processes = DAO.getSEGGRUPO(ICVEOBRA);
 		SEGGRUPO findedProcess = null;
@@ -52,7 +52,7 @@ public class SEGGRUPO_Service {
 	 * @param data - json data from request
 	 * @return created SEGGRUPO
 	 */
-	@Transactional(value="transactionManager_mimappir_DB2")
+	@Transactional(value="transactionManager_ADMSEG_POSGIS")
 	public List<SEGGRUPO> create(Object data){
 		
         List<SEGGRUPO> returnSEGGRUPO = new ArrayList<SEGGRUPO>();
@@ -80,7 +80,7 @@ public class SEGGRUPO_Service {
 	 * @param data - SEGGRUPO Object
 	 * @return created SEGGRUPO Object
 	 */
-	@Transactional(value="transactionManager_mimappir_DB2")
+	@Transactional(value="transactionManager_ADMSEG_POSGIS")
 	public SEGGRUPO create(SEGGRUPO SEGGRUPO){				
 		return DAO.save(SEGGRUPO);
 	}
@@ -91,7 +91,7 @@ public class SEGGRUPO_Service {
 	 * @param data - json data from request
 	 * @return updated SEGGRUPO
 	 */
-	@Transactional(value="transactionManager_mimappir_DB2")
+	@Transactional(value="transactionManager_ADMSEG_POSGIS")
 	public List<SEGGRUPO> update(Object data){
 		
 		List<SEGGRUPO> returnSEGGRUPO = new ArrayList<SEGGRUPO>();
@@ -109,7 +109,7 @@ public class SEGGRUPO_Service {
 	 * Delete SEGGRUPO by SEGGRUPO_ID
 	 * @param data - json data from request
 	 */
-	@Transactional(value="transactionManager_mimappir_DB2")
+	@Transactional(value="transactionManager_ADMSEG_POSGIS")
 	public void delete(Object data){
 		List<String> deleteSEGGRUPO = getIdFromRequest(data);
 /*		
