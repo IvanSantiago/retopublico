@@ -348,8 +348,11 @@
  
    	<div class="col-md-12 col-md-8" id="mapaContainer">
         <div id="mapa"></div>
+        <div class="mensajeText" id="enviarComentarioContent">ESTE ES UN VALOR</div>
+        
         <div id="zoomAlert"></div>
         <div class="zoomText" id="zoomAlertContent">Para ver los puntos de interés, presionar Acercar.</div>
+        
         <div id="divMenu" style="width: 215px;"> 
         	<a href="javascript:void(null)" onclick="menuActions()" >
 	      	  <img id="OpenLayers_Control_MinimizeDiv_innerImage" class="olAlphaImg"

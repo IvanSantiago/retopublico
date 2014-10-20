@@ -1,4 +1,4 @@
-package mx.gob.sct.utic.mimappir.admseg.controller;
+package mx.gob.sct.utic.mimappir.admseg.postgreSQL.controller;
 
 import java.util.HashMap;
 import java.util.Map;

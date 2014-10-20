@@ -1342,6 +1342,13 @@ jQuery.extend(MappirInterface.prototype, {
                 {label: 'Ruta hasta aquí', icon: "images/mapa-puntos/final.png", action: function () {
                     var me = $(this);
                     MappirInterface.agregarDireccionDesdeMapa(me.data('lon'), me.data('lat'), 'final');
+                } },
+                {label: 'Enviar comentario', icon: "images/menu_acerca-de.png", action: function () {
+                    $('#enviarComentarioContent').show();
+                } }
+                ,
+                {label: 'Sigue mi camino', icon: "images/iconos/destino.png", action: function () {
+                    $('#enviarComentarioContent').show();
                 } }
 //                null,// separator
 //                {label: 'Reportar incidente', icon: "images/mapa/advertencia.png", action: function () {

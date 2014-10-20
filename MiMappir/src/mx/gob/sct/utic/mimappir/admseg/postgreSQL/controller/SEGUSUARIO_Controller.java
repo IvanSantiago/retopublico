@@ -1,10 +1,12 @@
-package mx.gob.sct.utic.mimappir.admseg.controller;
+package mx.gob.sct.utic.mimappir.admseg.postgreSQL.controller;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import mx.gob.sct.utic.mimappir.admseg.postgreSQL.model.SEGGRUPO;
-import mx.gob.sct.utic.mimappir.admseg.services.SEGGRUPO_Service;
+
+import mx.gob.sct.utic.mimappir.admseg.postgreSQL.model.SEGUSUARIO;
+import mx.gob.sct.utic.mimappir.admseg.postgreSQL.services.SEGUSUARIO_Service;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
- * SEGGRUPO Controller - Spring
+ * SEGUSUARIO Controller - Spring
  * 
  * @author Ivan Santiago Méndez
  * 
@@ -20,55 +22,55 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 @RequestMapping("/web")
-public class SEGGRUPO_Controller  {
+public class SEGUSUARIO_Controller  {
 
-	private SEGGRUPO_Service Service;
+	private SEGUSUARIO_Service Service;
 	
-	@RequestMapping(value="/SEGGRUPO_view.action")
+	@RequestMapping(value="/SEGUSUARIO_view.action")
 	public @ResponseBody Map<String,? extends Object> externosView() throws Exception {
 
 		try{
 
-			List<SEGGRUPO> SEGGRUPO = Service.getList();
+			List<SEGUSUARIO> SEGUSUARIO = Service.getList();
 
-			return getMap(SEGGRUPO);
+			return getMap(SEGUSUARIO);
 
 		} catch (Exception e) {
 
-			return getModelMapError("Error retrieving SEGGRUPO from database. "+e.getMessage());
+			return getModelMapError("Error retrieving SEGUSUARIO from database. "+e.getMessage());
 		}
 	}
 	
-	@RequestMapping(value="/SEGGRUPO_create.action")
+	@RequestMapping(value="/SEGUSUARIO_create.action")
 	public @ResponseBody Map<String,? extends Object> create(@RequestParam Object data) throws Exception {
 
 		try{
 
-			List<SEGGRUPO> SEGGRUPO = Service.create(data);
+			List<SEGUSUARIO> SEGUSUARIO = Service.create(data);
 
-			return getMap(SEGGRUPO);
+			return getMap(SEGUSUARIO);
 
 		} catch (Exception e) {
 
-			return getModelMapError("Error trying to create SEGGRUPO.");
+			return getModelMapError("Error trying to create SEGUSUARIO.");
 		}
 	}
 	
-	@RequestMapping(value="/SEGGRUPO_update.action")
+	@RequestMapping(value="/SEGUSUARIO_update.action")
 	public @ResponseBody Map<String,? extends Object> update(@RequestParam Object data) throws Exception {
 		try{
 
-			List<SEGGRUPO> SEGGRUPO = Service.update(data);
+			List<SEGUSUARIO> SEGUSUARIO = Service.update(data);
 
-			return getMap(SEGGRUPO);
+			return getMap(SEGUSUARIO);
 
 		} catch (Exception e) {
 
-			return getModelMapError("Error trying to update SEGGRUPO.");
+			return getModelMapError("Error trying to update SEGUSUARIO.");
 		}
 	}
 	
-	@RequestMapping(value="/SEGGRUPO_delete.action")
+	@RequestMapping(value="/SEGUSUARIO_delete.action")
 	public @ResponseBody Map<String,? extends Object> delete(@RequestParam Object data) throws Exception {
 		
 		try{
@@ -82,20 +84,20 @@ public class SEGGRUPO_Controller  {
 
 		} catch (Exception e) {
 
-			return getModelMapError("Error trying to delete SEGGRUPO.");
+			return getModelMapError("Error trying to delete SEGUSUARIO.");
 		}
 	}
 	
 	/**
 	 * Generates modelMap to return in the modelAndView
-	 * @param SEGGRUPO
+	 * @param SEGUSUARIO
 	 * @return
 	 */
-	private Map<String,Object> getMap(List<SEGGRUPO> SEGGRUPO){
+	private Map<String,Object> getMap(List<SEGUSUARIO> SEGUSUARIO){
 		
 		Map<String,Object> modelMap = new HashMap<String,Object>(3);
-		modelMap.put("total", SEGGRUPO.size());
-		modelMap.put("data", SEGGRUPO);
+		modelMap.put("total", SEGUSUARIO.size());
+		modelMap.put("data", SEGUSUARIO);
 		modelMap.put("success", true);
 		
 		return modelMap;
@@ -118,7 +120,7 @@ public class SEGGRUPO_Controller  {
 
 
 	@Autowired
-	public void setsistemaService(SEGGRUPO_Service service) {
+	public void setsistemaService(SEGUSUARIO_Service service) {
 		this.Service = service;
 	}
 

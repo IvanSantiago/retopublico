@@ -8607,6 +8607,16 @@ spinner del loading en el autocomplete
 	width: 165;
 	height: 100;
 }
+
+.mensajeText{
+	color: darkgreen;
+	font-size: 1.1em;
+	font-weight: 900;
+	width: 165;
+	height: 100;
+	z-index: 1000;
+}
+
 #zoomAlertContent {
     position: absolute;
     z-index: 1000;

@@ -1,10 +1,12 @@
-package mx.gob.sct.utic.mimappir.admseg.controller;
+package mx.gob.sct.utic.mimappir.admseg.postgreSQL.controller;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import mx.gob.sct.utic.mimappir.admseg.postgreSQL.model.SEGPERMISOXGPO;
-import mx.gob.sct.utic.mimappir.admseg.services.SEGPERMISOXGPO_Service;
+
+import mx.gob.sct.utic.mimappir.admseg.postgreSQL.model.SEGMENU;
+import mx.gob.sct.utic.mimappir.admseg.postgreSQL.services.SEGMENU_Service;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
- * SEGPERMISOXGPO Controller - Spring
+ * SEGMENU Controller - Spring
  * 
  * @author Ivan Santiago Méndez
  * 
@@ -20,55 +22,55 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 @RequestMapping("/web")
-public class SEGPERMISOXGPO_Controller  {
+public class SEGMENU_Controller  {
 
-	private SEGPERMISOXGPO_Service Service;
+	private SEGMENU_Service Service;
 	
-	@RequestMapping(value="/SEGPERMISOXGPO_view.action")
-	public @ResponseBody Map<String,? extends Object> externosView() throws Exception {
+	@RequestMapping(value="/SEGMENU_view.action")
+	public @ResponseBody Map<String,? extends Object> view() throws Exception {
 
 		try{
 
-			List<SEGPERMISOXGPO> SEGPERMISOXGPO = Service.getList();
+			List<SEGMENU> SEGMENU = Service.getMenuList();
 
-			return getMap(SEGPERMISOXGPO);
+			return getMap(SEGMENU);
 
 		} catch (Exception e) {
-
-			return getModelMapError("Error retrieving SEGPERMISOXGPO from database. "+e.getMessage());
+			e.printStackTrace();
+			return getModelMapError("Error retrieving SEGMENU from database. "+e.getMessage());
 		}
 	}
 	
-	@RequestMapping(value="/SEGPERMISOXGPO_create.action")
+	@RequestMapping(value="/SEGMENU_create.action")
 	public @ResponseBody Map<String,? extends Object> create(@RequestParam Object data) throws Exception {
 
 		try{
 
-			List<SEGPERMISOXGPO> SEGPERMISOXGPO = Service.create(data);
+			List<SEGMENU> SEGMENU = Service.create(data);
 
-			return getMap(SEGPERMISOXGPO);
+			return getMap(SEGMENU);
 
 		} catch (Exception e) {
-
-			return getModelMapError("Error trying to create SEGPERMISOXGPO.");
+			e.printStackTrace();
+			return getModelMapError("Error trying to create SEGMENU."+ e.getMessage());
 		}
 	}
 	
-	@RequestMapping(value="/SEGPERMISOXGPO_update.action")
+	@RequestMapping(value="/SEGMENU_update.action")
 	public @ResponseBody Map<String,? extends Object> update(@RequestParam Object data) throws Exception {
 		try{
 
-			List<SEGPERMISOXGPO> SEGPERMISOXGPO = Service.update(data);
+			List<SEGMENU> SEGMENU = Service.update(data);
 
-			return getMap(SEGPERMISOXGPO);
+			return getMap(SEGMENU);
 
 		} catch (Exception e) {
-
-			return getModelMapError("Error trying to update SEGPERMISOXGPO.");
+			e.printStackTrace();
+			return getModelMapError("Error trying to update SEGMENU."+ e.getMessage());
 		}
 	}
 	
-	@RequestMapping(value="/SEGPERMISOXGPO_delete.action")
+	@RequestMapping(value="/SEGMENU_delete.action")
 	public @ResponseBody Map<String,? extends Object> delete(@RequestParam Object data) throws Exception {
 		
 		try{
@@ -81,21 +83,21 @@ public class SEGPERMISOXGPO_Controller  {
 			return modelMap;
 
 		} catch (Exception e) {
-
-			return getModelMapError("Error trying to delete SEGPERMISOXGPO.");
+			e.printStackTrace();
+			return getModelMapError("Error trying to delete SEGMENU."+ e.getMessage());
 		}
 	}
 	
 	/**
 	 * Generates modelMap to return in the modelAndView
-	 * @param SEGPERMISOXGPO
+	 * @param SEGMENU
 	 * @return
 	 */
-	private Map<String,Object> getMap(List<SEGPERMISOXGPO> SEGPERMISOXGPO){
+	private Map<String,Object> getMap(List<SEGMENU> SEGMENU){
 		
 		Map<String,Object> modelMap = new HashMap<String,Object>(3);
-		modelMap.put("total", SEGPERMISOXGPO.size());
-		modelMap.put("data", SEGPERMISOXGPO);
+		modelMap.put("total", SEGMENU.size());
+		modelMap.put("data", SEGMENU);
 		modelMap.put("success", true);
 		
 		return modelMap;
@@ -118,7 +120,7 @@ public class SEGPERMISOXGPO_Controller  {
 
 
 	@Autowired
-	public void setsistemaService(SEGPERMISOXGPO_Service service) {
+	public void setSEGMENUService(SEGMENU_Service service) {
 		this.Service = service;
 	}
 

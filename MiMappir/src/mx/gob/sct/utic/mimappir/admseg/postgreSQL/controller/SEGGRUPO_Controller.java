@@ -1,10 +1,12 @@
-package mx.gob.sct.utic.mimappir.admseg.controller;
+package mx.gob.sct.utic.mimappir.admseg.postgreSQL.controller;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import mx.gob.sct.utic.mimappir.admseg.postgreSQL.model.SEGMENU;
-import mx.gob.sct.utic.mimappir.admseg.services.SEGMENU_Service;
+
+import mx.gob.sct.utic.mimappir.admseg.postgreSQL.model.SEGGRUPO;
+import mx.gob.sct.utic.mimappir.admseg.postgreSQL.services.SEGGRUPO_Service;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
- * SEGMENU Controller - Spring
+ * SEGGRUPO Controller - Spring
  * 
  * @author Ivan Santiago Méndez
  * 
@@ -20,55 +22,55 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 @RequestMapping("/web")
-public class SEGMENU_Controller  {
+public class SEGGRUPO_Controller  {
 
-	private SEGMENU_Service Service;
+	private SEGGRUPO_Service Service;
 	
-	@RequestMapping(value="/SEGMENU_view.action")
-	public @ResponseBody Map<String,? extends Object> view() throws Exception {
+	@RequestMapping(value="/SEGGRUPO_view.action")
+	public @ResponseBody Map<String,? extends Object> externosView() throws Exception {
 
 		try{
 
-			List<SEGMENU> SEGMENU = Service.getMenuList();
+			List<SEGGRUPO> SEGGRUPO = Service.getList();
 
-			return getMap(SEGMENU);
+			return getMap(SEGGRUPO);
 
 		} catch (Exception e) {
-			e.printStackTrace();
-			return getModelMapError("Error retrieving SEGMENU from database. "+e.getMessage());
+
+			return getModelMapError("Error retrieving SEGGRUPO from database. "+e.getMessage());
 		}
 	}
 	
-	@RequestMapping(value="/SEGMENU_create.action")
+	@RequestMapping(value="/SEGGRUPO_create.action")
 	public @ResponseBody Map<String,? extends Object> create(@RequestParam Object data) throws Exception {
 
 		try{
 
-			List<SEGMENU> SEGMENU = Service.create(data);
+			List<SEGGRUPO> SEGGRUPO = Service.create(data);
 
-			return getMap(SEGMENU);
+			return getMap(SEGGRUPO);
 
 		} catch (Exception e) {
-			e.printStackTrace();
-			return getModelMapError("Error trying to create SEGMENU."+ e.getMessage());
+
+			return getModelMapError("Error trying to create SEGGRUPO.");
 		}
 	}
 	
-	@RequestMapping(value="/SEGMENU_update.action")
+	@RequestMapping(value="/SEGGRUPO_update.action")
 	public @ResponseBody Map<String,? extends Object> update(@RequestParam Object data) throws Exception {
 		try{
 
-			List<SEGMENU> SEGMENU = Service.update(data);
+			List<SEGGRUPO> SEGGRUPO = Service.update(data);
 
-			return getMap(SEGMENU);
+			return getMap(SEGGRUPO);
 
 		} catch (Exception e) {
-			e.printStackTrace();
-			return getModelMapError("Error trying to update SEGMENU."+ e.getMessage());
+
+			return getModelMapError("Error trying to update SEGGRUPO.");
 		}
 	}
 	
-	@RequestMapping(value="/SEGMENU_delete.action")
+	@RequestMapping(value="/SEGGRUPO_delete.action")
 	public @ResponseBody Map<String,? extends Object> delete(@RequestParam Object data) throws Exception {
 		
 		try{
@@ -81,21 +83,21 @@ public class SEGMENU_Controller  {
 			return modelMap;
 
 		} catch (Exception e) {
-			e.printStackTrace();
-			return getModelMapError("Error trying to delete SEGMENU."+ e.getMessage());
+
+			return getModelMapError("Error trying to delete SEGGRUPO.");
 		}
 	}
 	
 	/**
 	 * Generates modelMap to return in the modelAndView
-	 * @param SEGMENU
+	 * @param SEGGRUPO
 	 * @return
 	 */
-	private Map<String,Object> getMap(List<SEGMENU> SEGMENU){
+	private Map<String,Object> getMap(List<SEGGRUPO> SEGGRUPO){
 		
 		Map<String,Object> modelMap = new HashMap<String,Object>(3);
-		modelMap.put("total", SEGMENU.size());
-		modelMap.put("data", SEGMENU);
+		modelMap.put("total", SEGGRUPO.size());
+		modelMap.put("data", SEGGRUPO);
 		modelMap.put("success", true);
 		
 		return modelMap;
@@ -118,7 +120,7 @@ public class SEGMENU_Controller  {
 
 
 	@Autowired
-	public void setSEGMENUService(SEGMENU_Service service) {
+	public void setsistemaService(SEGGRUPO_Service service) {
 		this.Service = service;
 	}
 

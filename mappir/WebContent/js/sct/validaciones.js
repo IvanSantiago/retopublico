@@ -152,6 +152,7 @@ $(window).scroll(function() {
 	getPosition();
 	getMapMenuPosition();
 	getPositionAlertZoom(false);
+	getPositionComentario(false);
 });
 
 $(window).on('resize', function() {
@@ -160,6 +161,7 @@ $(window).on('resize', function() {
 			getPosition();
 			getMapMenuPosition();
 			getPositionAlertZoom(false);
+			getPositionComentario(false);
 		} catch (e) {
 		}
 	}, 10);
@@ -170,11 +172,15 @@ $(window).on('ready', function() {
 			getPosition();
 			getMapMenuPosition();
 			getPositionAlertZoom(false);
+			getPositionComentario(false);
 		} catch (e) {
 		}
 	}, 150);
 	$('#zoomAlert').hide();
 	$('#zoomAlertContent').hide();
+	$('#enviarComentarioContent').hide();
+	
+	
 	//bind de combos de configuración de vehiculos
 	$("#catalogoVehiculos").bind('keydown', function(e){MappirInterface.instance.configComboKeyDown("combo",e);});
 	$("#totalExcedente").bind('keydown', function(e){MappirInterface.instance.configComboKeyDown("combo",e);});
@@ -344,6 +350,30 @@ function getMapMenuPosition() {
 		$('#divMenu').css("left",
 				(divMap["left"] + divMapWidth - divMenuWidth) - scrollBodyLeft);
 	}
+}
+
+function getPositionComentario(isPantallaCompleta) {
+	if (isPantallaCompleta == false) {
+		//$('#zoomAlert').css("position","absolute");
+		$('#enviarComentarioContent').css("position","absolute");
+		var divMapWidth = $("#mapa").width();
+		//var divZoomAlertWidth = $("#zoomAlert").width();
+		var divMap = $("#mapa").offset();
+		if (divMap !== undefined) {
+			//$('#zoomAlert').css("top",(divMap["top"] - $("#zoomAlert").height()));
+			//$('#zoomAlert').css("left",(divMapWidth - divZoomAlertWidth ) / 2);
+			$('#enviarComentarioContent').css("top",(divMap["top"] - $("#zoomAlert").height()));
+			$('#enviarComentarioContent').css("left",(divMapWidth - divZoomAlertWidth ) / 2);
+		}
+	} else {
+		// para la pantalla completa
+		//$('#zoomAlert').css("position","fixed");
+		$('#enviarComentarioContent').css("position","fixed");
+		//$('#zoomAlert').css("top", ($(window).height() / 2) - ($('#zoomAlert').outerHeight() / 2));
+		//$('#zoomAlert').css("left", ($(window).width() / 2) - ($('#zoomAlert').outerWidth() / 2));
+		$('#enviarComentarioContent').css("top", ($(window).height() / 2) - ($('#enviarComentarioContent').outerHeight() / 2));
+		$('#enviarComentarioContent').css("left", ($(window).width() / 2) - ($('#enviarComentarioContent').outerWidth() / 2));
+	}	
 }
 
 function getPositionAlertZoom(isPantallaCompleta) {

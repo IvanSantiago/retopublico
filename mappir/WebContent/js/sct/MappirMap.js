@@ -250,6 +250,7 @@ jQuery.extend(MappirMap.prototype, {
                     }
                     getMapMenuPosition();
                     getPositionAlertZoom(!fullScreen);
+                    getPositionComentario(!fullScreen);
                 });
                 return k[0];
             }
@@ -549,6 +550,7 @@ function getMarks(){
     	clearLayer("capaDeMarcadores");
     	$('#zoomAlert').hide();
         $('#zoomAlertContent').hide();
+        $('#enviarComentarioContent').hide();
     }
     moveEvent();
 }
@@ -573,11 +575,13 @@ function getWeather(){
     }
     moveEvent();
 }
+
 function getMarksValidations(zoom){
     if(marksArray.length != 0){
         if(zoom > 10){
         	$('#zoomAlert').hide();
             $('#zoomAlertContent').hide();
+            $('#enviarComentarioContent').hide();
             var viewPort = MappirMap.instance.mapa.getExtent();
             viewPort =   viewPort.transform(MappirMap.instance.proyeccionInterna, MappirMap.instance.proyeccionExterna);
             var x1=viewPort.left,y1=viewPort.bottom,x2=viewPort.right,y2=viewPort.top;
@@ -602,22 +606,26 @@ function getMarksValidations(zoom){
         }else{
         	$('#zoomAlert').show();
             $('#zoomAlertContent').show();
+            $('#enviarComentarioContent').show();
             var markers = MappirMap.instance.mapa.getLayersByName("capaDeMarcadores")[0];
             // remove previous features from layer
             clearLayer("capaDeMarcadores");
             setTimeout(function () {
             	$('#zoomAlert').hide();
                 $('#zoomAlertContent').hide();
+                $('#enviarComentarioContent').hide();
             },2500);
         }
     }else{
     	 $('#zoomAlert').hide();
          $('#zoomAlertContent').hide();
+         $('#enviarComentarioContent').hide();
         var markers = MappirMap.instance.mapa.getLayersByName("capaDeMarcadores")[0];
         // remove previous features from layer
         clearLayer("capaDeMarcadores");
     }
 }
+
 function moveEvent(){
 	var eventMovend = MappirMap.instance.mapa.events.listeners["moveend"];
     var eventCount=0;

@@ -45,7 +45,7 @@
 			<table width="939" border="0" align="center"
 					cellpadding="0" cellspacing="0">
 					<tr>
-						<td width="600"><img src="../images/Titulo.png" width="600"
+						<td width="600"><img src="../images/header.png" width="600"
 							height="43" /></td>
 							<td>&nbsp; </td>
 						    <td width="245"><img src="../images/logo_empresa.png" width="245"
@@ -56,14 +56,11 @@
 		<tr>
 			<td class="gdtlogin">
 				<div id="editableForm"></div>
-				<!-- <div class="form">
-					USUARIO CONTRASEÑA <img src="btn_entrar.png" width="56" height="22" />
-				</div> -->
 			</td>
 		</tr>
 		<tr>
 			<td class="gdtbckd"><div align="center">
-					<img src="../images/fondo.fw.png" width="984" height="587" />
+					<img src="../images/bckgd.jpg" width="984" height="587" />
 				</div></td>
 		</tr>
 	</table>

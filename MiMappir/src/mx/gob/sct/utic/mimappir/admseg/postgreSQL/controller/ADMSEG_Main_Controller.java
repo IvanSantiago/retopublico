@@ -1,4 +1,4 @@
-package mx.gob.sct.utic.mimappir.admseg.controller;
+package mx.gob.sct.utic.mimappir.admseg.postgreSQL.controller;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -9,7 +9,7 @@ import mx.gob.sct.utic.mimappir.admseg.postgreSQL.model.SEGGPOXUSR;
 import mx.gob.sct.utic.mimappir.admseg.postgreSQL.model.SEGMENU;
 import mx.gob.sct.utic.mimappir.admseg.postgreSQL.model.SEGSISTEMA;
 import mx.gob.sct.utic.mimappir.admseg.postgreSQL.model.SEGUSUARIO;
-import mx.gob.sct.utic.mimappir.admseg.services.SEGMENU_Service;
+import mx.gob.sct.utic.mimappir.admseg.postgreSQL.services.SEGMENU_Service;
 import mx.gob.sct.utic.mimappir.sigtic.db2.model.MENU;
 import mx.gob.sct.utic.mimappir.util.MenuCreator;
 import mx.gob.sct.utic.mimappir.util.MenuNode;

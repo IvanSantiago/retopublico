@@ -48,6 +48,6 @@
  <!-- Autenticacion basada en el sistema SIGTIC  -->
  <!-- <bean id="customUserDetailsService" class="mx.gob.sct.utic.mimappir.sigtic.services.CustomUserDetailsService"/> -->
  <!-- Autenticacion basada en el sistema ADMSEG  -->
- <bean id="customUserDetailsService" class="mx.gob.sct.utic.mimappir.admseg.services.CustomUserDetailsService"/>
+ <bean id="customUserDetailsService" class="mx.gob.sct.utic.mimappir.admseg.postgreSQL.services.CustomUserDetailsService"/>
  
 </beans>

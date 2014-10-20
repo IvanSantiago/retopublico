@@ -1,10 +1,10 @@
-package mx.gob.sct.utic.mimappir.admseg.services;
+package mx.gob.sct.utic.mimappir.admseg.postgreSQL.services;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import mx.gob.sct.utic.mimappir.admseg.postgreSQL.dao.SEGGPOXUSR_DAO;
-import mx.gob.sct.utic.mimappir.admseg.postgreSQL.model.SEGGPOXUSR;
+import mx.gob.sct.utic.mimappir.admseg.postgreSQL.dao.SEGGRUPO_DAO;
+import mx.gob.sct.utic.mimappir.admseg.postgreSQL.model.SEGGRUPO;
 import mx.gob.sct.utic.mimappir.util.Util;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
@@ -13,120 +13,120 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
- * SEGGPOXUSR Service
+ * SEGGRUPO Service
  * 
  * @author Ivan Santiago
  * 
  */
 @Service
-public class SEGGPOXUSR_Service {
+public class SEGGRUPO_Service {
 	
-	private SEGGPOXUSR_DAO DAO;
+	private SEGGRUPO_DAO DAO;
 	private Util util;
 
 	/**
-	 * Get all SEGGPOXUSR
+	 * Get all SEGGRUPO
 	 * @return
 	 */
 	@Transactional(value="transactionManager_ADMSEG_POSGIS")
-	public List<SEGGPOXUSR> getList(){
+	public List<SEGGRUPO> getList(){
 		return DAO.getList();
 	}
 	/**
-	 * Get specific SEGGPOXUSR
+	 * Get specific SEGGRUPO
 	 * @return
 	 */
 	@Transactional(value="transactionManager_ADMSEG_POSGIS")
-	public SEGGPOXUSR getSEGGPOXUSR(Long ICVEUSUARIO){
-		List<SEGGPOXUSR> processes = DAO.getSEGGPOXUSR(ICVEUSUARIO);
-		SEGGPOXUSR findedProcess = null;
+	public SEGGRUPO getSEGGRUPO(int ICVEOBRA){
+		List<SEGGRUPO> processes = DAO.getSEGGRUPO(ICVEOBRA);
+		SEGGRUPO findedProcess = null;
 		// Search user based on the parameters
-		for (SEGGPOXUSR proceso : processes) {
+		for (SEGGRUPO proceso : processes) {
 			findedProcess= proceso;
 		}
 		return findedProcess;
 	}
 	
 	/**
-	 * Create new SEGGPOXUSR/SEGGPOXUSR
+	 * Create new SEGGRUPO/SEGGRUPO
 	 * @param data - json data from request
-	 * @return created SEGGPOXUSR
+	 * @return created SEGGRUPO
 	 */
 	@Transactional(value="transactionManager_ADMSEG_POSGIS")
-	public List<SEGGPOXUSR> create(Object data){
+	public List<SEGGRUPO> create(Object data){
 		
-        List<SEGGPOXUSR> returnSEGGPOXUSR = new ArrayList<SEGGPOXUSR>();
+        List<SEGGRUPO> returnSEGGRUPO = new ArrayList<SEGGRUPO>();
 		
-		List<SEGGPOXUSR> newSEGGPOXUSR = getSEGGPOXUSRFromRequest(data);
+		List<SEGGRUPO> newSEGGRUPO = getSEGGRUPOFromRequest(data);
 		
-/*		for (SEGGPOXUSR x : newSEGGPOXUSR){
+/*		for (SEGGRUPO x : newSEGGRUPO){
 			Integer key = DAO.getKey(x);
 			if(key==null){
 				key=new Integer(1);
 			}else{
 				key=key+1;
 			}			
-			x.getICVESEGGPOXUSR_PK().setICVEOBRA(key);
-			x.setICVESEGGPOXUSR_ID(x.getICVESEGGPOXUSR_PK().getICVEOBRA()+"-");
-			returnSEGGPOXUSR.add(DAO.save(x));
+			x.getICVESEGGRUPO_PK().setICVEOBRA(key);
+			x.setICVESEGGRUPO_ID(x.getICVESEGGRUPO_PK().getICVEOBRA()+"-");
+			returnSEGGRUPO.add(DAO.save(x));
 		}*/
-		return returnSEGGPOXUSR;
+		return returnSEGGRUPO;
 	}
 	
 	
 	
 	/**
-	 * Create new SEGGPOXUSR
-	 * @param data - SEGGPOXUSR Object
-	 * @return created SEGGPOXUSR Object
+	 * Create new SEGGRUPO
+	 * @param data - SEGGRUPO Object
+	 * @return created SEGGRUPO Object
 	 */
 	@Transactional(value="transactionManager_ADMSEG_POSGIS")
-	public SEGGPOXUSR create(SEGGPOXUSR SEGGPOXUSR){				
-		return DAO.save(SEGGPOXUSR);
+	public SEGGRUPO create(SEGGRUPO SEGGRUPO){				
+		return DAO.save(SEGGRUPO);
 	}
 	
 	
 	/**
-	 * Update SEGGPOXUSR/SEGGPOXUSR
+	 * Update SEGGRUPO/SEGGRUPO
 	 * @param data - json data from request
-	 * @return updated SEGGPOXUSR
+	 * @return updated SEGGRUPO
 	 */
 	@Transactional(value="transactionManager_ADMSEG_POSGIS")
-	public List<SEGGPOXUSR> update(Object data){
+	public List<SEGGRUPO> update(Object data){
 		
-		List<SEGGPOXUSR> returnSEGGPOXUSR = new ArrayList<SEGGPOXUSR>();
+		List<SEGGRUPO> returnSEGGRUPO = new ArrayList<SEGGRUPO>();
 		
-		List<SEGGPOXUSR> updatedSEGGPOXUSR = getSEGGPOXUSRFromRequest(data);
+		List<SEGGRUPO> updatedSEGGRUPO = getSEGGRUPOFromRequest(data);
 		
-		for (SEGGPOXUSR x : updatedSEGGPOXUSR){
-			returnSEGGPOXUSR.add(DAO.save(x));
+		for (SEGGRUPO x : updatedSEGGRUPO){
+			returnSEGGRUPO.add(DAO.save(x));
 		}
 		
-		return returnSEGGPOXUSR;
+		return returnSEGGRUPO;
 	}
 	
 	/**
-	 * Delete SEGGPOXUSR by SEGGPOXUSR_ID
+	 * Delete SEGGRUPO by SEGGRUPO_ID
 	 * @param data - json data from request
 	 */
 	@Transactional(value="transactionManager_ADMSEG_POSGIS")
 	public void delete(Object data){
-		List<String> deleteSEGGPOXUSR = getIdFromRequest(data);
+		List<String> deleteSEGGRUPO = getIdFromRequest(data);
 /*		
-		for (String id : deleteSEGGPOXUSR){
-			SEGGPOXUSR objToDelete = new SEGGPOXUSR();
-			objToDelete.setICVESEGGPOXUSR_ID(id);
-			DAO.delete(objToDelete.getICVESEGGPOXUSR_PK());
+		for (String id : deleteSEGGRUPO){
+			SEGGRUPO objToDelete = new SEGGRUPO();
+			objToDelete.setICVESEGGRUPO_ID(id);
+			DAO.delete(objToDelete.getICVESEGGRUPO_PK());
 		}*/
 	}
 	
 
 	/**
 	 * Spring use - DI
-	 * @param SEGGPOXUSR_DAO
+	 * @param SEGGRUPO_DAO
 	 */
 	@Autowired
-	public void setDAO(SEGGPOXUSR_DAO dao) {
+	public void setDAO(SEGGRUPO_DAO dao) {
 		this.DAO = dao;
 	}
 
@@ -140,51 +140,51 @@ public class SEGGPOXUSR_Service {
 	}
 	
 	/**
-	 * Get list of SEGGPOXUSR from request.
+	 * Get list of SEGGRUPO from request.
 	 * @param data - json data from request 
-	 * @return list of SEGGPOXUSR
+	 * @return list of SEGGRUPO
 	 */
-	public List<SEGGPOXUSR> getSEGGPOXUSRFromRequest(Object data){
+	public List<SEGGRUPO> getSEGGRUPOFromRequest(Object data){
 
-		List<SEGGPOXUSR> list;
+		List<SEGGRUPO> list;
 
 		//it is an array - have to cast to array object
 		if (data.toString().indexOf('[') > -1){
 
-			list = getListSEGGPOXUSRFromJSON(data);
+			list = getListSEGGRUPOFromJSON(data);
 
 		} else { //it is only one object - cast to object/bean
 
-			SEGGPOXUSR SEGGPOXUSR = getSEGGPOXUSRFromJSON(data);
+			SEGGRUPO SEGGRUPO = getSEGGRUPOFromJSON(data);
 
-			list = new ArrayList<SEGGPOXUSR>();
-			list.add(SEGGPOXUSR);
+			list = new ArrayList<SEGGRUPO>();
+			list.add(SEGGRUPO);
 		}
 
 		return list;
 	}
 
 	/**
-	 * Transform json data format into SEGGPOXUSR object
+	 * Transform json data format into SEGGRUPO object
 	 * @param data - json data from request
 	 * @return 
 	 */
-	private SEGGPOXUSR getSEGGPOXUSRFromJSON(Object data){
+	private SEGGRUPO getSEGGRUPOFromJSON(Object data){
 		JSONObject jsonObject = JSONObject.fromObject(data);
-		SEGGPOXUSR newSEGGPOXUSR = (SEGGPOXUSR) JSONObject.toBean(jsonObject, SEGGPOXUSR.class);
-		return newSEGGPOXUSR;
+		SEGGRUPO newSEGGRUPO = (SEGGRUPO) JSONObject.toBean(jsonObject, SEGGRUPO.class);
+		return newSEGGRUPO;
 	}
 
 	/**
-	 * Transform json data format into list of SEGGPOXUSR objects
+	 * Transform json data format into list of SEGGRUPO objects
 	 * @param data - json data from request
 	 * @return
 	 */
 	@SuppressWarnings("unchecked")
-	private List<SEGGPOXUSR> getListSEGGPOXUSRFromJSON(Object data){
+	private List<SEGGRUPO> getListSEGGRUPOFromJSON(Object data){
 		JSONArray jsonArray = JSONArray.fromObject(data);
-		List<SEGGPOXUSR> newSEGGPOXUSR = (List<SEGGPOXUSR>) JSONArray.toCollection(jsonArray,SEGGPOXUSR.class);
-		return newSEGGPOXUSR;
+		List<SEGGRUPO> newSEGGRUPO = (List<SEGGRUPO>) JSONArray.toCollection(jsonArray,SEGGRUPO.class);
+		return newSEGGRUPO;
 	}
 	
 	/**
@@ -203,10 +203,10 @@ public class SEGGPOXUSR_Service {
 
 		} else { //it is only one object - cast to object/bean
 
-			String SEGGPOXUSR = getIdFromJSON(data);
+			String SEGGRUPO = getIdFromJSON(data);
 
 			list = new ArrayList<String>();
-			list.add(SEGGPOXUSR);
+			list.add(SEGGRUPO);
 		}
 
 		return list;
@@ -221,8 +221,8 @@ public class SEGGPOXUSR_Service {
 	@SuppressWarnings("unchecked")
 	public List<String> getListIdFromJSON(Object data){
 		JSONArray jsonArray = JSONArray.fromObject(data);
-		List<String> SEGGPOXUSR_ID = (List<String>) JSONArray.toCollection(jsonArray,String.class);
-		return SEGGPOXUSR_ID;
+		List<String> SEGGRUPO_ID = (List<String>) JSONArray.toCollection(jsonArray,String.class);
+		return SEGGRUPO_ID;
 	}
 	
 	/**
@@ -234,7 +234,7 @@ public class SEGGPOXUSR_Service {
 	@SuppressWarnings("unchecked")
 	public String getIdFromJSON(Object data){
 		String Object = (String)data;
-		String SEGGPOXUSR_ID = Object.replaceAll("\"","");
-		return SEGGPOXUSR_ID;
+		String SEGGRUPO_ID = Object.replaceAll("\"","");
+		return SEGGRUPO_ID;
 	}
 }

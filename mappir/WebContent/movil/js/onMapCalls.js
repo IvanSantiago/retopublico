@@ -7,6 +7,7 @@ function getMarks(){
         markerFunction=false;
         $('#zoomAlert').hide();
         $('#zoomAlertContent').hide();
+        $('#enviarComentarioContent').hide();
         var markers = map.getLayersByName("Markers")[0];
         // remove previous features from layer
         markers.removeAllFeatures();
@@ -68,6 +69,7 @@ function getMarksValidations(zoom){
         if(zoom > 8){
             $('#zoomAlert').hide();
             $('#zoomAlertContent').hide();
+            $('#enviarComentarioContent').hide();
             var viewPort = map.getExtent();
             viewPort =   viewPort.transform(projMeters, projWGS84);
             var x1=viewPort.left,y1=viewPort.bottom,x2=viewPort.right,y2=viewPort.top;
@@ -103,6 +105,7 @@ function getMarksValidations(zoom){
         }else{
             $('#zoomAlert').show();
             $('#zoomAlertContent').show();
+            $('#enviarComentarioContent').show();
             var markers = map.getLayersByName("Markers")[0];
             // remove previous features from layer
             markers.removeAllFeatures();
@@ -110,6 +113,7 @@ function getMarksValidations(zoom){
     }else{
         $('#zoomAlert').hide();
         $('#zoomAlertContent').hide();
+        $('#enviarComentarioContent').hide();
         var markers = map.getLayersByName("Markers")[0];
         // remove previous features from layer
         markers.removeAllFeatures();

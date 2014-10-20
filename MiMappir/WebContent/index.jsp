@@ -9,14 +9,6 @@
         </script>
         <script language="JavaScript" type="text/javascript">javascript:window.history.forward(1);</script> 
   </head>  
-<!-- <body onload="window.location='./web/login.jsp';"> -->
-<!-- SIGTIC SECURITY -->
-<!-- <body onload="window.location='./auth/login.action';"> -->
-<!-- ADMSEG SECURITY -->
 <body onload="window.location='./auth/admseglogin.action';"> 
-
-
-  <!-- <body> -->
-    <!-- <h1>LOGIN</h1> -->
-  </body>
+</body>
 </html> 

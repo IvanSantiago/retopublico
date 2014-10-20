@@ -1,4 +1,4 @@
-package mx.gob.sct.utic.mimappir.admseg.services;
+package mx.gob.sct.utic.mimappir.admseg.postgreSQL.services;
 
 import java.util.ArrayList;
 import java.util.Collection;

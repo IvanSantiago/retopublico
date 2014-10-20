@@ -42,8 +42,7 @@ public class QOSCSENALGEO {
 	@Column(name="iTipoConex", nullable=false)
 	private Integer iTipoConex;
 	@Column(name="iOperador", nullable=false)
-	private Integer iOperador;
-	
+	private Integer iOperador;	
 	@Column(name="icveCelula", nullable=false)
 	private int icveCelula;
 	@Column(name="dlatitudCelula", nullable=false)

@@ -1,10 +1,12 @@
-package mx.gob.sct.utic.mimappir.admseg.controller;
+package mx.gob.sct.utic.mimappir.admseg.postgreSQL.controller;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import mx.gob.sct.utic.mimappir.admseg.postgreSQL.model.SEGGPOXUSR;
-import mx.gob.sct.utic.mimappir.admseg.services.SEGGPOXUSR_Service;
+
+import mx.gob.sct.utic.mimappir.admseg.postgreSQL.model.SEGPERMISOXGPO;
+import mx.gob.sct.utic.mimappir.admseg.postgreSQL.services.SEGPERMISOXGPO_Service;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
- * SEGGPOXUSR Controller - Spring
+ * SEGPERMISOXGPO Controller - Spring
  * 
  * @author Ivan Santiago Méndez
  * 
@@ -20,55 +22,55 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 @RequestMapping("/web")
-public class SEGGPOXUSR_Controller  {
+public class SEGPERMISOXGPO_Controller  {
 
-	private SEGGPOXUSR_Service Service;
+	private SEGPERMISOXGPO_Service Service;
 	
-	@RequestMapping(value="/SEGGPOXUSR_view.action")
+	@RequestMapping(value="/SEGPERMISOXGPO_view.action")
 	public @ResponseBody Map<String,? extends Object> externosView() throws Exception {
 
 		try{
 
-			List<SEGGPOXUSR> SEGGPOXUSR = Service.getList();
+			List<SEGPERMISOXGPO> SEGPERMISOXGPO = Service.getList();
 
-			return getMap(SEGGPOXUSR);
+			return getMap(SEGPERMISOXGPO);
 
 		} catch (Exception e) {
 
-			return getModelMapError("Error retrieving SEGGPOXUSR from database. "+e.getMessage());
+			return getModelMapError("Error retrieving SEGPERMISOXGPO from database. "+e.getMessage());
 		}
 	}
 	
-	@RequestMapping(value="/SEGGPOXUSR_create.action")
+	@RequestMapping(value="/SEGPERMISOXGPO_create.action")
 	public @ResponseBody Map<String,? extends Object> create(@RequestParam Object data) throws Exception {
 
 		try{
 
-			List<SEGGPOXUSR> SEGGPOXUSR = Service.create(data);
+			List<SEGPERMISOXGPO> SEGPERMISOXGPO = Service.create(data);
 
-			return getMap(SEGGPOXUSR);
+			return getMap(SEGPERMISOXGPO);
 
 		} catch (Exception e) {
 
-			return getModelMapError("Error trying to create SEGGPOXUSR.");
+			return getModelMapError("Error trying to create SEGPERMISOXGPO.");
 		}
 	}
 	
-	@RequestMapping(value="/SEGGPOXUSR_update.action")
+	@RequestMapping(value="/SEGPERMISOXGPO_update.action")
 	public @ResponseBody Map<String,? extends Object> update(@RequestParam Object data) throws Exception {
 		try{
 
-			List<SEGGPOXUSR> SEGGPOXUSR = Service.update(data);
+			List<SEGPERMISOXGPO> SEGPERMISOXGPO = Service.update(data);
 
-			return getMap(SEGGPOXUSR);
+			return getMap(SEGPERMISOXGPO);
 
 		} catch (Exception e) {
 
-			return getModelMapError("Error trying to update SEGGPOXUSR.");
+			return getModelMapError("Error trying to update SEGPERMISOXGPO.");
 		}
 	}
 	
-	@RequestMapping(value="/SEGGPOXUSR_delete.action")
+	@RequestMapping(value="/SEGPERMISOXGPO_delete.action")
 	public @ResponseBody Map<String,? extends Object> delete(@RequestParam Object data) throws Exception {
 		
 		try{
@@ -82,20 +84,20 @@ public class SEGGPOXUSR_Controller  {
 
 		} catch (Exception e) {
 
-			return getModelMapError("Error trying to delete SEGGPOXUSR.");
+			return getModelMapError("Error trying to delete SEGPERMISOXGPO.");
 		}
 	}
 	
 	/**
 	 * Generates modelMap to return in the modelAndView
-	 * @param SEGGPOXUSR
+	 * @param SEGPERMISOXGPO
 	 * @return
 	 */
-	private Map<String,Object> getMap(List<SEGGPOXUSR> SEGGPOXUSR){
+	private Map<String,Object> getMap(List<SEGPERMISOXGPO> SEGPERMISOXGPO){
 		
 		Map<String,Object> modelMap = new HashMap<String,Object>(3);
-		modelMap.put("total", SEGGPOXUSR.size());
-		modelMap.put("data", SEGGPOXUSR);
+		modelMap.put("total", SEGPERMISOXGPO.size());
+		modelMap.put("data", SEGPERMISOXGPO);
 		modelMap.put("success", true);
 		
 		return modelMap;
@@ -118,7 +120,7 @@ public class SEGGPOXUSR_Controller  {
 
 
 	@Autowired
-	public void setsistemaService(SEGGPOXUSR_Service service) {
+	public void setsistemaService(SEGPERMISOXGPO_Service service) {
 		this.Service = service;
 	}
 
