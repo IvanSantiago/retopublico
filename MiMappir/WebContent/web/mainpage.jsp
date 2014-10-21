@@ -45,7 +45,7 @@
 
 </head>
 <body>
-    <div id="header"><h1>Administrator Quality of Service Cell Phones</h1></div>
+    <div id="header"><h1>Administrator Mi Mappir</h1></div>
     <div style="display:none;">
 
         <!-- Start page content -->

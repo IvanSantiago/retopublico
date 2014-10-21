@@ -54,7 +54,7 @@ public class SEGMENU_Service {
 	 */
 	@Transactional(value="transactionManager_ADMSEG_POSGIS")
 	public List<SEGMENU> getMenuForUser(String LOGIN){
-		SEGSISTEMA segsistema = SEGSISTEMA_DAO.getSistema(new Short("48"));
+		SEGSISTEMA segsistema = SEGSISTEMA_DAO.getSistema(new Short("1"));
 		SEGUSUARIO segusuario = SEGUSUARIO_DAO.searchDatabase(LOGIN);
 		List<SEGMENU> menuDelUsuario = new ArrayList<SEGMENU>();
 		if(segusuario!= null){
