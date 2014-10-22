@@ -38,7 +38,7 @@ import android.util.Log;
 public class LocationPollerService extends Service {
 
 	private static final String LOCK_NAME_STATIC=
-			"com.sct.locationpoller.LocationPoller";
+			"mx.gob.sct.locationpoller.LocationPoller";
 
 	private static final int DEFAULT_TIMEOUT = 120000; // two minutes
 

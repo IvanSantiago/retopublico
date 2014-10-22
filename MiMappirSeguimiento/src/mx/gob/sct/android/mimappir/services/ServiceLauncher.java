@@ -36,7 +36,7 @@ public class ServiceLauncher {
 
 		case 2:			
 			//period = 1000 * 60 * 60 * 5 ; //Cada 5 horas
-			period = 1000 * 30 ; //cada 30 segundos
+			period = 1000 * 5 ; //cada 30 segundos
 			break;
 
 		case 3:
