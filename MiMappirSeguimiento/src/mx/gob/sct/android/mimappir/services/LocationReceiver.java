@@ -182,7 +182,7 @@ public class LocationReceiver extends BroadcastReceiver implements OnTaskComplet
 		}
 
 
-		final String url = "http://192.168.1.3:7001/mimappir/web/QOSCSENALGEO/REGISTRO/SENAL.action?" +
+		final String url = "http://10.0.2.2:7001/mimappir/web/QOSCSENALGEO/REGISTRO/SENAL.action?" +
 				"dintensidad=" + operatorGsmSignalStrength +
 				".0&tipo=0"+
 				"&danchobanda=0&" +
