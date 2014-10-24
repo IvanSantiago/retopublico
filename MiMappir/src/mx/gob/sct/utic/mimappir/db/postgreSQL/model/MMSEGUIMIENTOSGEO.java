@@ -16,14 +16,11 @@ import com.vividsolutions.jts.geom.PrecisionModel;
 
 @JsonAutoDetect
 @Entity
-@Table(name = "MMCOMENTARIOSGEO")
-public class MMCOMENTARIOSGEO {
+@Table(name = "MMSEGUIMIENTOSGEO")
+public class MMSEGUIMIENTOSGEO {
 	@Id
-	@Column(name="icvecomentario")
-	private Integer icvecomentario;
-	
-	@Column(name="icvecategoria")
-	private Integer icvecategoria;
+	@Column(name="icvesenal")
+	private Integer icvesenal;
 	
 	@Column(name="dlatitud", nullable=false)
 	protected Double dlatitud;
@@ -35,24 +32,24 @@ public class MMCOMENTARIOSGEO {
 	@Column(name="geoubicacion",columnDefinition="Geometry",nullable = true)
 	private Point geoubicacion;
 	
-	@Column(name="tsfechacomentario", nullable=false)
-	private String tsfechacomentario;
+	@Column(name="tsregistro", nullable=false)
+	private String tsregistro;
 
-	@Column(name="ccomentario", nullable=false)
-	private String ccomentario;
+	@Column(name="icveparticipante", nullable=false)
+	private Integer icveparticipante;
 	
 	
-	public MMCOMENTARIOSGEO() {
+	public MMSEGUIMIENTOSGEO() {
 	}
 	
-	public MMCOMENTARIOSGEO(Double dlongitud, Double dlatitud) {
+	public MMSEGUIMIENTOSGEO(Double dlongitud, Double dlatitud) {
 		this.dlongitud = dlongitud;
 		this.dlatitud = dlatitud;
 		Coordinate coord = new Coordinate(this.dlongitud, this.dlatitud);
 		this.geoubicacion = new GeometryFactory(new PrecisionModel(),4326).createPoint(coord);
 	}
 
-	public MMCOMENTARIOSGEO(Double dlongitud, Double dlatitud, Double altitude) {
+	public MMSEGUIMIENTOSGEO(Double dlongitud, Double dlatitud, Double altitude) {
 		this.dlongitud = dlongitud;
 		this.dlatitud = dlatitud;
 		
@@ -60,7 +57,7 @@ public class MMCOMENTARIOSGEO {
 		this.geoubicacion = new GeometryFactory(new PrecisionModel(),4326).createPoint(coord);
 	}
 
-	public MMCOMENTARIOSGEO(String coordinates) {
+	public MMSEGUIMIENTOSGEO(String coordinates) {
 		String[] coords = coordinates.replaceAll(",\\s+", ",").trim()
 				.split(",");
 		if ((coords.length < 1) && (coords.length > 3)) {
@@ -71,20 +68,12 @@ public class MMCOMENTARIOSGEO {
 
 	}
 
-	public Integer getIcvecomentario() {
-		return icvecomentario;
+	public Integer getIcvesenal() {
+		return icvesenal;
 	}
 
-	public void setIcvecomentario(Integer icvecomentario) {
-		this.icvecomentario = icvecomentario;
-	}
-
-	public Integer getIcvecategoria() {
-		return icvecategoria;
-	}
-
-	public void setIcvecategoria(Integer icvecategoria) {
-		this.icvecategoria = icvecategoria;
+	public void setIcvesenal(Integer icvesenal) {
+		this.icvesenal = icvesenal;
 	}
 
 	public Double getDlatitud() {
@@ -111,20 +100,20 @@ public class MMCOMENTARIOSGEO {
 		this.geoubicacion = geoubicacion;
 	}
 
-	public String getTsfechacomentario() {
-		return tsfechacomentario;
+	public String getTsregistro() {
+		return tsregistro;
 	}
 
-	public void setTsfechacomentario(String tsfechacomentario) {
-		this.tsfechacomentario = tsfechacomentario;
+	public void setTsregistro(String tsregistro) {
+		this.tsregistro = tsregistro;
 	}
 
-	public String getCcomentario() {
-		return ccomentario;
+	public Integer getIcveparticipante() {
+		return icveparticipante;
 	}
 
-	public void setCcomentario(String ccomentario) {
-		this.ccomentario = ccomentario;
+	public void setIcveparticipante(Integer icveparticipante) {
+		this.icveparticipante = icveparticipante;
 	}
 
 }
